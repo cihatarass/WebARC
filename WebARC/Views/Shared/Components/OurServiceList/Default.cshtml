@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete
+@model List<OurService>
+
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1"><b>Hizmetlerimiz</b></h1>
+            <p>
+                Birçok farklı alanda sizlere kaliteli hizmet vermekteyiz.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Take(6))
+        {
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <img src="/images/@item.Image" class="rounded-circle img-fluid border" style="width:400px; height:350px;">
+                <h5 class="text-center mt-3 mb-3">@item.Title</h5>
+            </div>
+        }
+
+    </div>
+</section>

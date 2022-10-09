@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewData["Title"] = "Hakkımızda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section AdditionalMeta
+{
+    <title>@ViewBag.Title - Pasifik Deniz İnşaat</title>
+    @await Component.InvokeAsync("HeadMeta")
+}
+
+
+
+@await Component.InvokeAsync("AboutText")
+
+
+
+<!-- Close Banner -->
+<!-- Start Section -->
+@await Component.InvokeAsync("ReferenceAboutList")
+<!-- End Section -->

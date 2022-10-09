@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete
+@model List<Settings> 
+
+
+
+    @foreach (var item in Model)
+    {
+        <meta name="description" content="@Html.Raw(item.SiteDescription)" />
+        <meta name="keywords" content="@Html.Raw(item.SiteKeywords)" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Aras Hidrolik">
+        <meta property="og:title" content="@item.SiteTitle">
+        <meta property="og:description" content="@Html.Raw(item.SiteDescription)">
+        <meta property="og:locale" content="tr_TR">
+    }
+
+

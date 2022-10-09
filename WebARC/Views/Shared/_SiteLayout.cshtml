@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @RenderSection("AdditionalMeta", required: false)
+    <link rel="apple-touch-icon" href="/template/assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/template/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/template/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/template/assets/css/templatemo.css">
+    <link rel="stylesheet" href="/template/assets/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="/template/assets/css/fontawesome.min.css">
+
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    @await Html.PartialAsync("NavbarPartial")
+    <!-- Close Top Nav -->
+    <!-- Header -->
+    @await Html.PartialAsync("NavMenuPartial")
+    <!-- Close Header -->
+    <!-- Modal -->
+
+
+    @RenderBody()
+
+    <!-- Start Footer -->
+    @await Html.PartialAsync("FooterPartial")
+    <!-- End Footer -->
+    <!-- Start Script -->
+    <script src="/template/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="/template/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/template/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/template/assets/js/templatemo.js"></script>
+    <script src="/template/assets/js/custom.js"></script>
+
+    <!-- End Script -->
+</body>
+
+@RenderSection("Scripts", required: false)
+
+
+</html>

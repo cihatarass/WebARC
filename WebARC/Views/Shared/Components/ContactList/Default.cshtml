@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+
+
+
+<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+    <div class="info-wrap w-100 p-md-5 p-4" style="        background-color: #01d28e">
+        @foreach (var item in Model)
+        {
+            <h3>@item.Title</h3>
+            <div class="dbox w-100 d-flex align-items-start mt-5">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-map-marker"></span>
+                </div>
+                <div class="text pl-3">
+                    <p><span>Adres:</span> @item.Adress</p>
+                </div>
+            </div>
+            <div class="dbox w-100 d-flex align-items-center mt-5">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-phone"></span>
+                </div>
+                <div class="text pl-3">
+                    <p><span>GSM:</span> <a href="tel:@item.Gsm">@item.Gsm</a></p>
+                </div>
+            </div>
+            <div class="dbox w-100 d-flex align-items-center mt-5">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-phone"></span>
+                </div>
+                <div class="text pl-3">
+                    <p><span>Pbx:</span> <a href="tel:@item.Pbx">@item.Pbx</a></p>
+                </div>
+            </div>
+            <div class="dbox w-100 d-flex align-items-center mt-5">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-paper-plane"></span>
+                </div>
+                <div class="text pl-3">
+                    <p><span>Email:</span> <a href="mailto:@item.Mail">@item.Mail</a></p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

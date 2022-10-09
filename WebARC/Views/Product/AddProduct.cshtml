@@ -1,0 +1,120 @@
+﻿@model WebARC.Models.ProductImageViewModel
+
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ürün Ekle</h2>
+
+
+@using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+
+    <div class="form-group">
+
+        <label>Başlık</label>
+        @Html.TextBoxFor(x=>x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Title)
+        <small></small>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Marka</label>
+        @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Brand)
+        <small></small>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Model</label>
+        @Html.TextBoxFor(x => x.SubBrand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SubBrand)
+        <small></small>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Ürün Açıklaması</label>
+        @Html.TextAreaFor(x => x.Text, htmlAttributes: new { id = "editor" })
+        @Html.ValidationMessageFor(x => x.Text)
+        <small></small>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Özellikler</label>
+        @Html.TextBoxFor(x => x.Feature, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Feature)
+        <small></small>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Stok Durumu</label>
+        <select class="form-control" name="Stock">
+            <option>Stokta Var</option>
+            <option>Stokta Yok</option>
+        </select>
+        <small></small>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>Ürün Resimleri</label>
+        <input type="file" class="form-control" name="Image" />
+        <small class="form-text text-muted">Kabul edilen Fotoğraf uzantıları ; .png , .jpg , .jpeg.</small>
+        <small class="form-text text-muted">Maksimum Fotoğraf Boyutu ; <b>8000kB.</b></small>
+        <small class="form-text text-muted">Ziyaretçilerin aklına kazınacak etkili bir Fotoğraf ekleyin.</small>
+
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+
+        <label>SEO Açıklama</label>
+        <input type="text" class="form-control" name="Seo_Description" />
+        <small>Arama motorunun bu sayfayı tanımlaması için 180 Karakter uzunluğunda özet bir açıklama yazısı yazılmalıdır.</small>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>SEO Anahtar Kelimeler</label>
+        <input type="text" class="form-control" name="Seo_Keywords" />
+        <small>Arama motorunun bu sayfayı tanımlaması gerekli olan anahtar kelimeler yazılmalıdır.</small>
+
+    </div>
+
+    <button class="btn btn-success">Ekle</button>
+
+}
+
+
+
+
+@section Scripts{
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+
+}

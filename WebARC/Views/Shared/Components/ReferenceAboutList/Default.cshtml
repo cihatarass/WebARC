@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<Reference>
+
+
+<section class="bg-light py-5">
+    <div class="container my-4">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1"><b>Referanslar</b></h1>
+                <p>
+                    Uğur Ambalaj Kalitesiyle tanışmanız için bir telefon uzağınızdayız.
+                </p>
+            </div>
+            <div class="col-lg-12">
+                <div class="row d-flex flex-row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-3 p-md-5">
+                            <a href="#"><img class="img-fluid" src="/images/@item.Image" alt="@item.CompanyName" style="height:100px; width:200px;"></a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

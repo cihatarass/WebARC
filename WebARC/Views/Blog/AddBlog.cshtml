@@ -1,0 +1,78 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Yazısı Ekle</h2>
+
+@using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x=>x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Title)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>İçerik</label>
+        @Html.TextAreaFor(x => x.Text, new { @class = "form-control", @id = "editor" })
+        @Html.ValidationMessageFor(x => x.Text)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control-file", @type = "file"  })
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>Yazar</label>
+        @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Author)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>Konu</label>
+        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Subject)
+        <small></small>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        <label>SEO Açıklama</label>
+        @Html.TextBoxFor(x => x.Seo_Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Seo_Description)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>SEO Anahtar Kelimeleri</label>
+        @Html.TextBoxFor(x => x.Seo_Keywords, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Seo_Keywords)
+        <small></small>
+    </div>
+
+
+    <button class="btn btn-success">Ekle</button>
+
+
+}
+
+
+@section Scripts{
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+
+}

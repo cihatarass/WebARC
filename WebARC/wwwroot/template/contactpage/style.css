@@ -1,0 +1,191 @@
+
+.contactForm .label {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.contactForm .form-control {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+#contactForm .error {
+    color: red;
+    font-size: 12px;
+}
+
+#contactForm .form-control {
+    font-size: 16px;
+}
+
+.contact-wrap {
+    background: #fff;
+}
+
+.form-control {
+    height: 36px;
+    background: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+    .form-control::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .form-control::-moz-placeholder {
+        /* Firefox 19+ */
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .form-control:-ms-input-placeholder {
+        /* IE 0+ */
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .form-control:-moz-placeholder {
+        /* Firefox 18- */
+        color: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .form-control:focus, .form-control:active {
+        border-color: #01d28e !important;
+    }
+
+textarea.form-control {
+    height: inherit !important;
+}
+
+.wrapper {
+    width: 100%;
+    -webkit-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+}
+
+
+.info-wrap {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+    .info-wrap h3 {
+        color: #fff;
+    }
+
+    .info-wrap .dbox {
+        width: 100%;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 25px;
+    }
+
+        .info-wrap .dbox:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-wrap .dbox p {
+            margin-bottom: 0;
+        }
+
+            .info-wrap .dbox p span {
+                font-weight: 500;
+                color: #fff;
+            }
+
+            .info-wrap .dbox p a {
+                color: #fff;
+            }
+
+        .info-wrap .dbox .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+            .info-wrap .dbox .icon span {
+                font-size: 20px;
+                color: #fff;
+            }
+
+        .info-wrap .dbox .text {
+            width: calc(100% - 50px);
+        }
+
+.btn-cont {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    position: relative;
+    margin-bottom: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-cont {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+}
+
+.btn-cont:hover, .btn:active, .btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+    -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+}
+
+.btn-cont.btn-primary {
+    background: #01d28e !important;
+    border-color: #01d28e !important;
+    color: #fff;
+}
+
+    .btn-cont.btn-primary:hover, .btn.btn-primary:focus {
+        border-color: #019f6c !important;
+        background: #019f6c !important;
+    }
+
+
+#message {
+    resize: vertical;
+}
+
+#form-message-warning, #form-message-success {
+    display: none;
+}
+
+#form-message-warning {
+    color: red;
+}
+
+#form-message-success {
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+}

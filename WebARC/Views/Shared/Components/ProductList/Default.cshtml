@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+@using WebARC.Helper
+@model List<Product> 
+
+
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1"><b>Projeler</b></h1>
+                <p>
+                    Yaptığımız Projelere Buradan Ulaşabilirsiniz.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.OrderByDescending(x => x.Product_ID).Take(6))
+            {
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <a href="/Urunler/@SeoHelper.ToSeoUrl(item.Title).ToLower()-@item.Product_ID">
+                            <img src="/images/@item.Image" class="card-img-top" alt="..." style="height:370px;">
+                        </a>
+                        <div class="card-body">
+                            <a href="/Urunler/@SeoHelper.ToSeoUrl(item.Title).ToLower()-@item.Product_ID" class="h2 text-decoration-none text-dark">@item.Title</a>
+                            <p class="card-text">
+                                @Html.Raw(item.Text.Substring(0, item.Text.Substring(0,100).LastIndexOf(" ")))....
+                            </p>
+                            <p class="text-muted">@item.Brand</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

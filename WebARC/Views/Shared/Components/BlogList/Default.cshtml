@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Öne Çıkan Ürenler</h1>
+                <p>
+                    Müşterilerimizin en çok tercih ettiği ürünlere göz atabilirsiniz..
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="@item.Image" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">@item.Title</a>
+                            <p class="card-text">
+                                @item.Text
+                            </p>
+                            <p class="text-muted">@item.Subject - @item.Author</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

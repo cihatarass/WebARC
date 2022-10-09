@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Projeler";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section AdditionalMeta
+{
+    <title>@ViewBag.Title - Pasifik Deniz İnşaat</title>
+    @await Component.InvokeAsync("HeadMeta")
+}
+
+
+
+@await Component.InvokeAsync("ProductPageList")

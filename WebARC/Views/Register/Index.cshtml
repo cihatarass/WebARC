@@ -1,0 +1,82 @@
+﻿@model WebARC.Models.AdministratorAddViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yönetici</h2>
+
+
+
+<div class="card">
+    <div class="card-body register-card-body">
+        <p class="login-box-msg">Yönetici Ekle</p>
+
+        <form method="post">
+            <div class="form-group">
+
+                <label>Adınız</label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <input type="text" asp-for="Name" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Soyadınız</label>
+                <span asp-validation-for="SurName" class="text-danger"></span>
+                <input type="text" asp-for="SurName" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Kullanıcı Adı</label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+                <input type="text" asp-for="UserName" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Mail Adresiniz</label>
+                <span asp-validation-for="Mail" class="text-danger"></span>
+                <input type="text" asp-for="Mail" class="form-control" />
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Şifreniz</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <input type="text" asp-for="Password" class="form-control" />
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Şifre Tekrar</label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <input type="text" asp-for="ConfirmPassword" class="form-control" />
+
+            </div>
+
+            <div class="text-danger" asp-validation-summary="ModelOnly">
+
+            </div>
+
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-4">
+                    <button class="btn btn-primary btn-block">Kayıt Ol</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+    </div>
+    <!-- /.form-box -->
+</div>

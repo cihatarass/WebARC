@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    <link href="~/css/Weather.css" rel="stylesheet" />
+}
+
+
+<div class="col-lg-12">
+    <h2>Merhaba <b>@ViewBag.NameIdentity</b></h2>
+    <small>Güncel istatistiklere buradan ulaşabilirsiniz.</small>
+
+</div>
+
+<section class="content mt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <!--weather card-->
+                <div class="card card-weather">
+                    <div class="card-body">
+                        <div class="weather-date-location">
+                            <h3>@DateTime.Now.ToString("dddd")</h3>
+                            <p class="text-gray">
+                                <span class="weather-date">@DateTime.Now.ToString("dd MMMM yyyy")</span>
+
+                                <span class="weather-location">@ViewBag.WeatherCity</span>
+                            </p>
+                        </div>
+                        <div class="weather-data d-flex">
+                            <div class="mr-auto">
+                                <h4 class="display-3">
+                                    @ViewBag.WeatherC
+                                    <span class="symbol">&deg;</span>C
+                                </h4>
+                                <p style="text-transform:capitalize; font-size:22px;">
+                                    @ViewBag.WeatherText
+                                </p>
+                                <p style="font-size:16px">Hissedilen Sıcaklık : @ViewBag.WeatherFeels <span class="symbol">&deg;</span>C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       </div>
+    </section>
+
+            @await Component.InvokeAsync("BlogStatistics")
+
+

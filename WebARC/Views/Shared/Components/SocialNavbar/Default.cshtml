@@ -1,0 +1,13 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialLinks>
+
+<div>
+
+    @foreach (var item in Model)
+    {
+        <a class="text-light" href="https://api.whatsapp.com/send?phone=@item.Whatsapp" target="_blank" rel="sponsored"><i class="fab fa-whatsapp fa-sm fa-fw me-2"></i></a>
+        <a class="text-light" href="https://www.facebook.com/@item.Facebook" target="_blank"><i class="fab fa-facebook fa-sm fa-fw me-2"></i></a>
+        <a class="text-light" href="https://www.instagram.com/@item.Instagram" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+    }
+
+</div>

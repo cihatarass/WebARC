@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.Team
+
+
+@{
+    ViewData["Title"] = "AddTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personel</h2>
+
+@using (Html.BeginForm("AddTeam", "Team", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label>Ad Soyad</label>
+        @Html.TextBoxFor(x => x.PersonName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonName)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>Görevi</label>
+        @Html.TextBoxFor(x => x.Mission, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Mission)
+        <small></small>
+    </div>
+
+    <div class="form-group">
+        <label>Kısa Biyografi</label>
+        @Html.TextAreaFor(x => x.ShortBio, new { @class = "form-control", @id = "editor" })
+        @Html.ValidationMessageFor(x => x.ShortBio)
+        <small></small>
+    </div>
+
+
+    <div class="form-group">
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control-file", @type = "file" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <small></small>
+    </div>
+
+
+    <button class="btn btn-success">Ekle</button>
+
+
+}
+
+
+@section Scripts{
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+
+}
+

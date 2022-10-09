@@ -1,0 +1,109 @@
+﻿@model WebARC.Models.MailSendViewModel
+
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    <link href="~/template/contactpage/animate.css" rel="stylesheet" />
+    <link href="~/template/contactpage/style.css" rel="stylesheet" />
+}
+
+@section AdditionalMeta
+{
+    <title>@ViewBag.Title - Pasifik Deniz İnşaat</title>
+    @await Component.InvokeAsync("HeadMeta")
+}
+
+
+
+@if (TempData["msg"] != null)
+{
+    <link href="~/admintemplate/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" rel="stylesheet" />
+    <script src="~/admintemplate/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+    <script>
+        Swal.fire('Başarılı', ' @TempData["msg"] ', 'success')
+    </script>
+
+}
+
+<section class="container py-5">
+    <div class="mt-5 mb-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-12 col-md-7 order-md-last d-flex align-items-stretch">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.328281344534!2d29.290032432415373!3d40.842715771402496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadc458d34c9a3%3A0x3db5cb2f38ee1284!2sEvliya%20%C3%87elebi%2C%20Peker%20Sk.%20No%3A16%2C%2034944%20Tuzla%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1664923974863!5m2!1str!2str" height="450" style="border:0;" class="contact-wrap w-100 " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-0 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3 class="mb-4">İletişime Geç</h3>
+                                <div id="form-message-warning" class="mb-4"></div>
+                                <div id="form-message-success" class="mb-4">
+                                    @TempData["msg"]
+                                </div>
+                                <form method="post" id="contactForm" name="contactForm" class="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="name">AD, SOYAD</label>
+                                                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Adınız veya Şirket Ünvanınız", @required = "required", } })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="email">E-Posta Adresi</label>
+                                                @Html.EditorFor(x => x.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Posta Adresiniz", @required = "required", } })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12 mt-5">
+                                            <div class="form-group">
+                                                <label class="label" for="email"><b>Telefon Numarası</b></label>
+                                                <br />
+                                                <small>Lütfen Telefon Numaranızı Başında 0 (sıfır) olmadan giriniz.</small>
+                                                <br />
+                                                <small>Örnek : 555 333 99 88</small>
+                                                @Html.EditorFor(x => x.Telephone, new { htmlAttributes = new { @class = "form-control mt-2", @placeholder = "Telefon Numaranız", @required = "required", @type = "tel", @pattern = "[0-9]{10}" } })
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mt-5">
+                                            <div class="form-group">
+                                                <label class="label" for="subject">Konu</label>
+                                                @Html.EditorFor(x => x.Subject, new { htmlAttributes = new { @class = "form-control", @placeholder = "Konu", @required = "required", } })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-5">
+                                            <div class="form-group">
+                                                <label class="label" for="#">Mesaj</label>
+                                                @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Lütfen bilgi almak istediğiniz konuyu detaylandırın.", @id = "message", @cols = "30", @rows = "4", @required = "required", })
+                                            </div>
+                                        </div>
+                                        <button class="btn-cont btn-primary">Gönder</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        @await Component.InvokeAsync("ContactList")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

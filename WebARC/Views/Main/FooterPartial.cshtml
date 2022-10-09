@@ -1,0 +1,54 @@
+﻿<footer class="bg-dark" id="tempaltemo_footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 pt-5">
+
+                @await Component.InvokeAsync("FooterTitle")
+
+                @await Component.InvokeAsync("FooterContact")
+
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Bağlantılar</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="/Anasayfa/">Anasayfa</a></li>
+                    <li><a class="text-decoration-none" href="/Urunler/">Ürünler</a></li>
+                    <li><a class="text-decoration-none" href="/Hakkimizda/">Hakkımızda</a></li>
+                    <li><a class="text-decoration-none" href="/iletisim/">İletişim</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 pt-5">
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Bilgi</h2>
+                <ul class="list-unstyled text-light footer-link-list">
+                    <li><a class="text-decoration-none" href="#">Hakkımızda</a></li>
+                    <li><a class="text-decoration-none" href="#">Gizlilik Politikası</a></li>
+                    <li><a class="text-decoration-none" href="#">S.S.S</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row text-light mb-4">
+            <div class="col-12 mb-3">
+                <div class="w-100 my-3 border-top border-light"></div>
+            </div>
+            @await Component.InvokeAsync("SocialFooter") 
+        </div>
+    </div>
+
+    <div class="w-100 bg-black py-3">
+        <div class="container">
+            <div class="row pt-2">
+                <div class="col-12">
+                    <p class="text-left text-light">
+                        Copyright &copy; 2022 Uğur Ambalaj Strech ve Plastik San.
+                        | Dizayn <a rel="sponsored" href="">WebARC</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>

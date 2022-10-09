@@ -1,0 +1,20 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialLinks> 
+
+<div class="col-auto me-auto">
+    @foreach (var item in Model)
+    {
+        <ul class="list-inline text-left footer-icons">
+            <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="https://api.whatsapp.com/send?phone=@item.Whatsapp"><i class="fab fa-whatsapp fa-lg fa-fw"></i></a>
+            </li>
+            <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/@item.Facebook"><i class="fab fa-facebook fa-lg fa-fw"></i></a>
+            </li>
+            <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/@item.Instagram"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+            </li>
+        </ul>
+    }
+
+</div>

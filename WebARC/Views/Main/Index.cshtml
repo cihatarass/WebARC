@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section AdditionalMeta
+{
+    <title>Pasifik Deniz İnşaat</title>
+    @await Component.InvokeAsync("HeadMeta") 
+}
+
+
+
+<!-- Start Banner Header -->
+@await Component.InvokeAsync("HeaderList")
+<!-- End Banner Header -->
+<!-- Start Our Service-->
+@await Component.InvokeAsync("OurServiceList")
+<!-- End Our Service -->
+<!-- Start Featured Product -->
+@await Component.InvokeAsync("ProductList")
+<!-- End Featured Product -->
+<!-- Start Featured Reference -->
+@await Component.InvokeAsync("ReferenceList")
+<!-- End Featured Reference -->

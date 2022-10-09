@@ -1,0 +1,38 @@
+﻿@model WebARC.Models.MailSendViewModel
+
+<form method="post" class="contactForm">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="label" for="name">Full Name</label>
+                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Adınız veya Şirket Ünvanınız", } });
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="label" for="email">E-Posta Adresi</label>
+                @Html.EditorFor(x => x.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Posta Adresiniz", } });
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                @Html.EditorFor(x => x.Subject, new { htmlAttributes = new { @class = "form-control", @placeholder = "Konu", } });
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="label" for="#">Message</label>
+                <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                @Html.TextAreaFor(x => x.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Lütfen bilgi almak istediğiniz konuyu detaylandırın.", } });
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="Gönder" class="btn btn-primary">
+                <div class="submitting"></div>
+            </div>
+        </div>
+    </div>
+</form>

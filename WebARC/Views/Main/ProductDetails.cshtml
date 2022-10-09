@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.Product
+
+@{
+    ViewData["Title"] = "Projeler";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section AdditionalMeta
+{
+    <title>@ViewBag.PMetaTitle - Pasifik Deniz İnşaat</title>
+    <meta name="description" content="@Html.Raw(ViewBag.PMetaDes)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.PMetaKey)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aras Hidrolik">
+    <meta property="og:title" content="@ViewBag.PMetaTitle">
+    <meta property="og:description" content="@Html.Raw(ViewBag.PMetaDes)">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@ViewBag.PMetaTitle">
+    <meta name="twitter:description" content="@Html.Raw(ViewBag.PMetaDes)">
+}
+
+
+<section class="bg-light">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-lg-5 mt-5">
+                <div class="card mb-3">
+                    <img class="card-img img-fluid" src="/images/@Model.Image" style="height:773px" alt="Card image cap" id="product-detail">
+                </div>
+            </div>
+            <!-- col end -->
+            <div class="col-lg-7 mt-5">
+                <div class="card" style="height:773px">
+                    <div class="card-body">
+                        <h1 class="h1"><b>@Model.Title</b></h1>
+                        <h2 class="h2 mt-4"><b><u>Proje Açıklaması</u></b></h2>
+                        <p>@Html.Raw(Model.Text)</p>
+
+
+                        <h2 class="h2"><b><u>Bilgi</u></b></h2>
+                        @Model.Feature
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+

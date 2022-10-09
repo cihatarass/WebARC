@@ -1,0 +1,8 @@
+﻿@using EntityLayer.Concrete
+@model List<Settings>
+
+
+@foreach (var item in Model)
+{
+    <h3 class="h3 text-success border-bottom pb-3 border-light logo">@item.SiteTitle</h3>
+}
